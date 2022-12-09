@@ -27,4 +27,4 @@ java -jar SoapCurrencyConverter-1.0-SNAPSHOT-jar-with-dependencies.jar -p <port>
 
 
 
-Exchange rates are provided by: [floatrates.com](Exchange rates are provided by: https://www.floatrates.com/json-feeds.html)
+Exchange rates are provided by: [floatrates.com](https://www.floatrates.com/json-feeds.html)
