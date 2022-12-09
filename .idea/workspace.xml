@@ -70,7 +70,6 @@
     <configuration name="main" type="JetRunConfigurationType">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="SoapCurrencyConverter" />
-      <option name="PROGRAM_PARAMETERS" value="-p 4001" />
       <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -89,7 +88,7 @@
       <workItem from="1670422864923" duration="5683000" />
       <workItem from="1670463453520" duration="944000" />
       <workItem from="1670508894248" duration="2232000" />
-      <workItem from="1670563330235" duration="12953000" />
+      <workItem from="1670563330235" duration="16958000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670356680160</created>
