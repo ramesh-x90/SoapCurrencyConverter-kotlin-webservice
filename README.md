@@ -16,7 +16,7 @@ _Kotlin soap server application for currency conversion application._
 java -jar SoapCurrencyConverter-1.0-SNAPSHOT-jar-with-dependencies.jar -p <port>
 ```
 
-### wsdl
+### WSDL
 `http://localhost:8080/ws/currencyConvertService?wsdl` [visit](http://localhost:8080/ws/currencyConvertService?wsdl)
 
 
