@@ -2,7 +2,6 @@
 _Kotlin soap server application for currency conversion application._
 
 
-
 ## Requirements
 1. java 8 | [install](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
 2. maven if you want build the project
@@ -13,9 +12,9 @@ _Kotlin soap server application for currency conversion application._
 [Executable Jar](https://github.com/ramesh-x90/SoapCurrencyConverter-kotlin-webservice/releases)
 
 
-``
+```sh
 java -jar SoapCurrencyConverter-1.0-SNAPSHOT-jar-with-dependencies.jar -p <port>
-``
+```
 
 
 ## Express REST API to consume SOAP currency converter webservice
