@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="850d3715-8f9e-4d62-8a13-efff4dd7c6b0" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SoapCurrencyConverter_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ramesh/data/ExchangeRateRepoImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ramesh/data/ExchangeRateRepoImpl.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +47,9 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "E:/PROJECTS/java/SoapCurrencyConverter/src/main/resources",
     "nodejs.jest.jest_package": "",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38500422",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
@@ -62,6 +69,7 @@
     <configuration name="main" type="JetRunConfigurationType">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="SoapCurrencyConverter" />
+      <option name="PROGRAM_PARAMETERS" value="-p 4001" />
       <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -80,7 +88,7 @@
       <workItem from="1670422864923" duration="5683000" />
       <workItem from="1670463453520" duration="944000" />
       <workItem from="1670508894248" duration="2232000" />
-      <workItem from="1670563330235" duration="3536000" />
+      <workItem from="1670563330235" duration="11368000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670356680160</created>

@@ -6,6 +6,7 @@ import ramesh.service.IExchangeRateRepo
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
+import java.io.InputStreamReader
 import java.lang.Exception
 import java.lang.RuntimeException
 
@@ -17,9 +18,9 @@ class ExchangeRateRepoImpl : IExchangeRateRepo {
 
     init {
         try {
-            val file = this::class.java.classLoader.getResource("ExchangeRates.json")
-            file?.also {
-                val br = BufferedReader(FileReader(File(it.path)))
+            val inStream = this::class.java.classLoader.getResourceAsStream("ExchangeRates.json")
+            inStream?.also {
+                val br = BufferedReader(InputStreamReader(inStream))
                 val tt = object : TypeToken<List<ExchangeRateData>>() {}.type
                 data = Gson().fromJson(br ,tt)
 
@@ -35,6 +36,7 @@ class ExchangeRateRepoImpl : IExchangeRateRepo {
 
 
         }catch (e :  Exception){
+            println("data file : ${e.message}")
             throw RuntimeException(e)
         }
 

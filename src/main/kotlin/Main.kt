@@ -27,7 +27,18 @@ fun main(args: Array<String>) {
     }
 
     try {
-        val url = "http://localhost:8080/ws/currencyConvetService"
+        var port = "8080"
+
+        args.indexOf("-p").also {
+            if(it >= 0){
+                if(args.size > it+1){
+                    port = args[it+1]
+                }
+            }
+        }
+
+
+        val url = "http://localhost:$port/ws/currencyConvertService"
         Endpoint.publish( url , Service(ExchangeRateRepoImpl() ) )
         print("Service is running on : $url?wsdl")
     }catch (e : Exception){
