@@ -1,4 +1,4 @@
-package ramesh.service;
+package ramesh.service
 
 interface IExchangeRateRepo {
 

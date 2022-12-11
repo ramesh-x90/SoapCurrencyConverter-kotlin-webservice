@@ -4,11 +4,9 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import ramesh.service.IExchangeRateRepo
 import java.io.BufferedReader
-import java.io.File
-import java.io.FileReader
 import java.io.InputStreamReader
-import java.lang.Exception
 import java.lang.RuntimeException
+import kotlin.Exception
 
 class ExchangeRateRepoImpl : IExchangeRateRepo {
 
@@ -28,7 +26,7 @@ class ExchangeRateRepoImpl : IExchangeRateRepo {
 
             if(data.isEmpty()) throw Exception("DataSource is empty")
 
-            data.forEach { it ->
+            data.forEach {
                 codeRateMap[it.code] = it.rate
                 codeNameMap[it.code] = it.name
             }
@@ -44,9 +42,8 @@ class ExchangeRateRepoImpl : IExchangeRateRepo {
 
 
     override fun getRateByCode(code: String): Double? {
-        val data = codeRateMap[code];
 
-        return data
+        return codeRateMap[code]
 
     }
 

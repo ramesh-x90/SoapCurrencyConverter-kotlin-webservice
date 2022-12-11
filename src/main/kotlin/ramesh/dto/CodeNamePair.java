@@ -6,8 +6,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CodeNamePair{
-    private String code;
-    private String name;
+    private final String code;
+    private final String name;
 
     public CodeNamePair(String code , String name) {
         this.code = code;
