@@ -1,4 +1,4 @@
-package ramesh.data
+package currencyConvertor.data
 
 data class ExchangeRateData(val code : String ,
                             val alphaCode: String ,

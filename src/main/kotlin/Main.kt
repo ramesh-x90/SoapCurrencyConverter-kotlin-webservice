@@ -1,5 +1,5 @@
-import ramesh.data.ExchangeRateRepoImpl
-import ramesh.service.Service
+import currencyConvertor.data.ExchangeRateRepoImpl
+import currencyConvertor.service.Service
 import java.lang.Exception
 
 import javax.xml.ws.Endpoint

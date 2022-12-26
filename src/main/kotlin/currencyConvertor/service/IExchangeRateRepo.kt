@@ -1,4 +1,4 @@
-package ramesh.service
+package currencyConvertor.service
 
 interface IExchangeRateRepo {
 

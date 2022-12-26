@@ -1,4 +1,4 @@
-package ramesh.dto;
+package currencyConvertor.dto;
 
 
 import javax.xml.bind.annotation.XmlAccessType;

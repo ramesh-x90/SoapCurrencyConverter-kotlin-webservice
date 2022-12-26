@@ -1,6 +1,6 @@
-package ramesh.service
+package currencyConvertor.service
 
-import ramesh.dto.CodeNamePair
+import currencyConvertor.dto.CodeNamePair
 import java.lang.Exception
 import javax.jws.WebMethod
 import javax.jws.WebParam
