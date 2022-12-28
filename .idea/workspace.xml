@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="850d3715-8f9e-4d62-8a13-efff4dd7c6b0" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/currencyConvertor/service/IService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/currencyConvertor/service/CurrencyService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/currencyConvertor/service/Service.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/currencyConvertor/service/CurrencyServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/currencyConvertor/service/common/BaseService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/currencyConvertor/service/common/BaseService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/currencyConvertor/service/common/ServiceFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/currencyConvertor/service/common/ServiceFactory.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,7 @@
       <workItem from="1670851768433" duration="401000" />
       <workItem from="1671617571063" duration="1640000" />
       <workItem from="1672164946110" duration="2365000" />
-      <workItem from="1672202380661" duration="38631000" />
+      <workItem from="1672202380661" duration="40531000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670356680160</created>
