@@ -1,5 +1,6 @@
 import currencyConvertor.data.ExchangeRateRepoImpl
 import currencyConvertor.service.Service
+import currencyConvertor.service.annotations.processAnnotations
 import java.lang.Exception
 
 import javax.xml.ws.Endpoint
@@ -37,6 +38,7 @@ fun main(args: Array<String>) {
             }
         }
 
+        processAnnotations()
 
         val url = "http://localhost:$port/ws/currencyConvertService"
         Endpoint.publish( url , Service(ExchangeRateRepoImpl() ) )
