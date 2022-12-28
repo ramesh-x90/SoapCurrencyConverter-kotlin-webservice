@@ -13,7 +13,7 @@ _Kotlin soap server application for currency conversion application._
 
 
 ```sh
-java -jar SoapCurrencyConverter-1.0-SNAPSHOT-jar-with-dependencies.jar -p <port>
+java -jar SoapCurrencyConverter-1.0-SNAPSHOT-jar-with-dependencies.jar -p <port> -k <apiKey>
 ```
 
 ### WSDL
