@@ -1,6 +1,5 @@
 import currencyConvertor.data.ExchangeRateRepoImpl
-import currencyConvertor.service.Service
-import currencyConvertor.service.annotations.processAnnotations
+import currencyConvertor.service.CurrencyServiceImpl
 import java.lang.Exception
 
 import javax.xml.ws.Endpoint
@@ -29,6 +28,7 @@ fun main(args: Array<String>) {
 
     try {
         var port = "8080"
+        var apiKey = "UkXp2s5v8x/A?D(G+KbPeShVmYq3t6w9z\$B&E)H@McQfTjWnZr4u7x!A%D*F-JaNdRgUkXp2s5v8y/B?E(H+KbPeShVmYq3t6w9z\$C&F)J@NcRfTjWnZr4u7x!A%D*G-"
 
         args.indexOf("-p").also {
             if(it >= 0){
@@ -38,13 +38,24 @@ fun main(args: Array<String>) {
             }
         }
 
-        processAnnotations()
+        args.indexOf("-k").also {
+            if(it >= 0){
+                if(args.size > it+1){
+                    apiKey = args[it+1]
+                }
+            }
+        }
+
+
+        val serviceImpl = CurrencyServiceImpl(ExchangeRateRepoImpl() )
+        serviceImpl.setApiKey(apiKey)
 
         val url = "http://localhost:$port/ws/currencyConvertService"
-        Endpoint.publish( url , Service(ExchangeRateRepoImpl() ) )
-        print("Service is running on : $url?wsdl")
+        Endpoint.publish( url , serviceImpl)
+        println("Service is running on : $url?wsdl")
+
     }catch (e : Exception){
-        println(e.message)
+        throw e
     }
 
 }

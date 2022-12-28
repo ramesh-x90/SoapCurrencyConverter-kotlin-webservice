@@ -1,5 +1,6 @@
 package currencyConvertor.service.common
 
+import currencyConvertor.service.CurrencyService
 import currencyConvertor.service.annotations.ApiAuth
 import currencyConvertor.service.common.util.PackageUtility.getClassesInPackage
 import java.lang.reflect.InvocationHandler
@@ -7,37 +8,35 @@ import java.lang.reflect.Method
 import java.lang.reflect.Proxy
 import javax.xml.ws.handler.MessageContext
 
-data class ServiceFactory(val targetService : BaseService){
+data class ServiceFactory<T>(val targetService : T){
 
-    private var services : MutableList<BaseService> = mutableListOf()
-    private lateinit var itr : Class<*>
-
+    private var services : MutableList<T> = mutableListOf()
 
 
-    class WebMethodInterceptor : InvocationHandler {
-        private lateinit var targetService : BaseService
 
-        constructor(target : BaseService){
+
+    class WebMethodInterceptor<T> : InvocationHandler {
+        private val targetService : T
+
+         constructor(target : T){
             targetService = target
         }
 
         override fun invoke(proxy: Any?, method: Method?, args: Array<out Any>?): Any? {
-            if(proxy is BaseService){
-                (proxy.context.messageContext[MessageContext.HTTP_REQUEST_HEADERS] as Map<String, List<String>>).forEach{
+            if(targetService is BaseService){
+                (targetService.context.messageContext[MessageContext.HTTP_REQUEST_HEADERS] as Map<String, List<String>>).forEach{
                         entry -> println("${entry.key} :${entry.value}" )
                 }
-
-                return method?.invoke(targetService,args)
             }
 
-            return null
+            return method?.invoke(targetService,args)
         }
 
     }
 
 
 
-    private fun <T : BaseService> createMethodProxy(target : T, itr : Class<*> ): T {
+    private fun <T2> createMethodProxy(target : T, itr : Class<T2> ): T {
         // Create a proxy for the method
         val proxy = Proxy.newProxyInstance(
             itr.classLoader,
@@ -46,6 +45,7 @@ data class ServiceFactory(val targetService : BaseService){
         )
 
         // Return the proxy
+        println(proxy is CurrencyService)
         return proxy as T
     }
 
@@ -56,8 +56,8 @@ data class ServiceFactory(val targetService : BaseService){
             if(it.isAnnotationPresent(ApiAuth::class.java)){
                 if(it.isInterface){
                     list.forEach {clz ->
-                        if((clz != it).and(it.isAssignableFrom(clz)).and(clz.isAssignableFrom(BaseService::class.java))){
-                            services.add(createMethodProxy(targetService,itr))
+                        if((clz != it).and(it.isAssignableFrom(clz))){
+                            services.add(createMethodProxy(targetService,it))
                         }
                     }
                 }
@@ -65,12 +65,8 @@ data class ServiceFactory(val targetService : BaseService){
         }
     }
 
-    fun setInterface( _interface : Class<*>): ServiceFactory {
-        itr = _interface
-        return this
-    }
 
-    fun build(): List<BaseService> {
+    fun build(): List<T> {
         processAnnotations()
         return services
     }

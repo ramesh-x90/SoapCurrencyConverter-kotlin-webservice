@@ -8,14 +8,18 @@ import java.lang.Exception
 
 
 @WebService(
-    endpointInterface = "currencyConvertor.service.IService",
+    endpointInterface = "currencyConvertor.service.CurrencyService",
     serviceName = "currencyConverterSoap",
     portName = "currencyConverterPort"
 )
-open class Service(private val repo : IExchangeRateRepo) : IService , BaseService() {
+open class CurrencyServiceImpl(private val repo : IExchangeRateRepo) : CurrencyService , BaseService() {
+
     override fun convertCurrency(sourceCurrency: String,
                                  targetCurrency: String,
                                  amount: Double): Double {
+
+        authenticate()
+
         val sourceRate = repo.getRateByCode(sourceCurrency)
         val targetRate = repo.getRateByCode(targetCurrency)
 
@@ -29,7 +33,11 @@ open class Service(private val repo : IExchangeRateRepo) : IService , BaseServic
     }
 
 
+
     override fun getAllCodeAndNames(): ArrayList<CodeNamePair> {
+
+        authenticate()
+
         val list = ArrayList<CodeNamePair>()
         repo.getCodesAndNames().forEach{ (key, value) -> list.add(CodeNamePair(key,value))}
         return list
