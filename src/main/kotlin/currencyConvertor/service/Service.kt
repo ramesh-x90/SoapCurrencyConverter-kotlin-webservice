@@ -8,7 +8,7 @@ import java.lang.Exception
 
 
 @WebService(
-    endpointInterface = "ramesh.service.IService",
+    endpointInterface = "currencyConvertor.service.IService",
     serviceName = "currencyConverterSoap",
     portName = "currencyConverterPort"
 )
