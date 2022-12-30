@@ -32,8 +32,6 @@ open class CurrencyServiceImpl(private val repo : IExchangeRateRepo) : CurrencyS
 
     }
 
-
-
     override fun getAllCodeAndNames(): ArrayList<CodeNamePair> {
 
         authenticate()
